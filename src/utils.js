@@ -1,4 +1,4 @@
-const constants = require('./constants');
+const constants = require("./constants");
 
 /**
  * Get's the full avatar url from a user
@@ -7,8 +7,10 @@ const constants = require('./constants');
  * @param {Number} [size=128] - size of the image
  * @return {string} - Full url to the cdn hosted avatar
  */
-function getAvatarUrl(user, fileType = 'png', size = 128) {
-    return `${constants.CDN_HOST}/avatars/${user.id}/${user.avatar}.${fileType}?size=${size}`;
+function getAvatarUrl(user, fileType = "png", size = 128) {
+  return `${constants.CDN_HOST}/avatars/${user.id}/${
+    user.avatar
+  }.${fileType}?size=${size}`;
 }
 
-module.exports = {getAvatarUrl};
+module.exports = { getAvatarUrl };

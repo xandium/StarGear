@@ -1,5 +1,5 @@
 {
-  "name": "stargear",
+  "name": "@xandium/stargear",
   "version": "0.2.0",
   "description": "A simple discord bot framework for connecting a bot to cloudstorm and raincache",
   "main": "index.js",
@@ -9,8 +9,8 @@
   "author": "wolke <wolke@weeb.sh>",
   "license": "MIT",
   "dependencies": {
-    "raincache": "DasWolke/RainCache#dev",
-    "snowtransfer": "^0.2.1"
+    "@xandium/raincache": "^0.4.0",
+    "@xandium/snowtransfer": "^0.2.1"
   },
   "optionalDependencies": {
     "amqplib": "^0.5.1"

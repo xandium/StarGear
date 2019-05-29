@@ -1,19 +1,19 @@
-'use strict';
+"use strict";
 let EventEmitter;
 try {
-    EventEmitter = require('eventemiiter3');
+  EventEmitter = require("eventemiiter3");
 } catch (e) {
-    EventEmitter = require('events').EventEmitter;
+  EventEmitter = require("events").EventEmitter;
 }
 
 class BaseConnector extends EventEmitter {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    initialize() {
-        return Promise.resolve();
-    }
+  initialize() {
+    return Promise.resolve();
+  }
 }
 
 module.exports = BaseConnector;
