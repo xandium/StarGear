@@ -33,9 +33,6 @@ class StarGear extends EventEmitter {
     Object.assign(this.options, options);
     this.cache = this.options.cache;
     this.voice = this.options.voice;
-    if (!inboundConnector) {
-      throw new Error("Missing inbound connector");
-    }
     this.utils = utils;
     this.inbound = inboundConnector;
     this.eventProcessor = new EventProcessor(this.options, this);
@@ -54,13 +51,16 @@ class StarGear extends EventEmitter {
     if (this.voice && !this.voice.ready) {
       await this.voice.initialize();
     }
-    if (!this.inbound.ready) {
-      await this.inbound.initialize();
+    //only enabled if connecting StarGear directly to AMQP
+    if (this.inbound) {
+      if (!this.inbound.ready) {
+        await this.inbound.initialize();
+      }
+      this.inbound.on("event", async event => {
+        event = await this.middlewareHandler.applyMiddleware(event);
+        await this.eventProcessor.inbound(event);
+      });
     }
-    this.inbound.on("event", async event => {
-      event = await this.middlewareHandler.applyMiddleware(event);
-      await this.eventProcessor.inbound(event);
-    });
   }
 
   /**
