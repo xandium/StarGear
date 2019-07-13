@@ -7,10 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "wolke <wolke@weeb.sh>",
+  "contributors": [
+    "Sharon Williams <swilliams@xandium.io> (https://xandium.io)"
+  ],
   "license": "MIT",
   "dependencies": {
-    "@xandium/raincache": "^0.4.0",
-    "@xandium/snowtransfer": "^0.2.1"
+    "@xandium/raincache": "git+ssh://git@github.com/xandium/raincache",
+    "@xandium/snowtransfer": "git+ssh://git@github.com/xandium/snowtransfer"
   },
   "optionalDependencies": {
     "amqplib": "^0.5.1"
