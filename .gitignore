@@ -3,3 +3,4 @@
 node_modules
 stargear.iml
 examples/config.json
+package-lock.json
