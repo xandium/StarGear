@@ -12,8 +12,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@xandium/raincache": "git+ssh://git@github.com/xandium/raincache",
-    "@xandium/snowtransfer": "git+ssh://git@github.com/xandium/snowtransfer"
+    "@xandium/raincache": "git+https://git@github.com/xandium/raincache",
+    "@xandium/snowtransfer": "git+https://git@github.com/xandium/snowtransfer"
   },
   "optionalDependencies": {
     "amqplib": "^0.5.1"
